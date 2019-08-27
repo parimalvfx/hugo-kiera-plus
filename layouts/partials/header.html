@@ -3,7 +3,7 @@
 <html lang="{{ .Site.LanguageCode | default "en" }}">
 
 <head>
-  <title>{{ .Site.Title }}</title>
+  <title>{{ .Site.Params.windowTitle }}</title>
   {{ partial "meta" . }}
   {{ partial "header_includes" . -}}
 </head>
@@ -24,6 +24,8 @@
         <li><a href="https://github.com/{{ .Site.Author.github }}"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
         {{ end }} {{ if .Site.Author.gitlab }}
         <li><a href="https://gitlab.com/{{ .Site.Author.gitlab }}"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+        {{ end }} {{ if .Site.Author.imdb }}
+        <li><a href="https://www.imdb.com/name/{{ .Site.Author.imdb }}"><i class="fa fa-imdb fa-lg" aria-hidden="true"></i></a></li>
         {{ end }} {{ if .Site.Author.facebook }}
         <li><a href="https://www.facebook.com/{{ .Site.Author.facebook }}"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
         {{ end }} {{ if .Site.Author.instagram }}
