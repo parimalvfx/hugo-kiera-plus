@@ -2,15 +2,8 @@
 
 <section id="home">
   <ul>
-    {{ range $index, $page := first 3 (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
-    <li {{if eq $index 0}}class="first"{{end}}>
-      <h2><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
-      {{ partial "aside" . }}
-      <p>{{ .Summary }}</p>
-      {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}">Read more&hellip;</a>
-      {{ end }}
-    </li>
+    {{ range .Site.Params.homePageIntro }}
+    <h4>{{ . | safeHTML }}</h4>
     {{ end }}
   </ul>
 </section>
